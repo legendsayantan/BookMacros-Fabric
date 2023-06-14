@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "bookmacros",
+  "version": "${version}",
+  "name": "BookMacros",
+  "description": "A fabric mod to use Books and Lecterns as client-side macros for chat and commands.",
+  "authors": [
+    "LegendSayantan"
+  ],
+  "contact": {
+    "repo": "https://github.com/legendsayantan/BookMacros"
+  },
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.legendsayantan.fabric.bookmacros.client.BookMacrosClient"
+    ],
+    "main": [
+      "com.legendsayantan.fabric.bookmacros.BookMacros"
+    ]
+  },
+  "mixins": [
+    "BookMacros.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
