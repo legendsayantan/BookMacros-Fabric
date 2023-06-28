@@ -44,7 +44,7 @@ public class BookScreenMixin extends Screen {
             this.addDrawableChild(ButtonWidget.builder(Text.of("Send to chat"), (button) -> {
                 this.close();
                 Text data = getPageContents(getBook(),this.pageIndex);
-                BookMacrosClient.sendToChat(data.getString(), (MinecraftClient) (Object) this.client);
+                BookMacrosClient.sendToChat(data.getString(), this.client);
             }).dimensions(this.width/2 + 2, 220, 98, 20).build());
         }
     }

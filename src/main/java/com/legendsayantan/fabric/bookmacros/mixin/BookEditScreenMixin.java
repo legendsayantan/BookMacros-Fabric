@@ -7,9 +7,6 @@ import net.minecraft.client.gui.screen.ingame.BookEditScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.WritableBookItem;
-import net.minecraft.item.WrittenBookItem;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtList;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -44,7 +41,7 @@ public class BookEditScreenMixin extends Screen {
             this.addDrawableChild(ButtonWidget.builder(Text.of("Send to chat"), (button) -> {
                 this.close();
                 Text data = getPageContents(getBook(),this.currentPage);
-                BookMacrosClient.sendToChat(data.getString(), (MinecraftClient) (Object) this.client);
+                BookMacrosClient.sendToChat(data.getString(), this.client);
             }).dimensions(this.width/2 + 2, 220, 98, 20).build());
         }
     }

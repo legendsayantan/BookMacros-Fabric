@@ -19,7 +19,6 @@ public class BookMacrosClient implements ClientModInitializer {
     }
 
     public static void putIntoChat(String message){
-        assert MinecraftClient.getInstance().player != null;
         MinecraftClient.getInstance().setScreen(new ChatScreen(message));
     }
     public static void sendToChat(String message, MinecraftClient client) {

@@ -39,7 +39,7 @@ public abstract class LecternScreenMixin extends BookScreen implements ScreenHan
                 this.close();
                 ItemStack bookItem = this.getScreenHandler().getBookItem();
                 Text data = getPageContents(bookItem,this.pageIndex);
-                BookMacrosClient.sendToChat(data.getString(), (MinecraftClient) (Object) this.client);
+                BookMacrosClient.sendToChat(data.getString(), this.client);
             }).dimensions(this.width/2 + 2, 220, 98, 20).build());
         }
     }
